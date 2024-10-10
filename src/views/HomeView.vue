@@ -121,13 +121,13 @@ const items = ref([
 }
 
 .card-background-light {
-    background-image: url('home/light.jpeg');
+    background-image: url('/home/light.jpeg');
     background-size: cover;
     background-position: center;
 }
 
 .card-background-dark {
-    background-image: url('home/dark.jpeg');
+    background-image: url('/home/dark.jpeg');
     background-size: cover;
     background-position: center;
 }
