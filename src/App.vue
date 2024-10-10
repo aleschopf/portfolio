@@ -19,37 +19,47 @@
   </div>
   <ScrollTop />
   <Card>
-    <template #title>
-      <h2 class="text-xlg font-bold text-center">Alecsandro Schopf Auer Junior</h2>
-    </template>
     <template #content>
       <div class="flex flex-row gap-4 items-center justify-center py-4">
-        <div class="flex flex-row items-center justify-evenly space-x-4 mt-2">
+        <div class="flex flex-row items-center justify-evenly space-x-4">
           <div class="w-[60%]">
-            I'm Fullstack Developer and DevOps enthusiast with a focus on building scalable systems and ensuring robust
-            security.<br>
-            I'm passionate about leveraging technology to create solutions that make a difference.
+            <p class="mb-3 text-2xl font-bold">Alecsandro Schopf Auer Junior</p>
+            <p class="text-sm mb-1">I'm Fullstack Developer and DevOps enthusiast with a focus on building scalable
+              systems and ensuring
+              robust security.</p>
+            <p class="text-sm">I'm passionate about leveraging technology to create solutions that make a difference.
+            </p>
           </div>
-          <div class="w-[40%] flex flex-row justify-end gap-5">
-            <p class="m-0">&copy; 2024 Aleschopf. Todos os direitos reservados.</p>
-            <div class="icons-footer">
-              <a href="https://www.linkedin.com/in/aleschopf/" target="_blank" rel="noopener noreferrer">
-                <i class="linkedin pi pi-linkedin" style="font-size: 1.6rem;"></i>
-              </a>
-              <a href="https://github.com/aleschopf" target="_blank" rel="noopener noreferrer">
-                <i class="github pi pi-github" style="font-size: 1.6rem;"></i>
-              </a>
-              <a href="https://www.instagram.com/aleschopf/" target="_blank" rel="noopener noreferrer">
-                <i class="instagram pi pi-instagram" style="font-size: 1.6rem;"></i>
-              </a>
-              <a href="mailto:alecsandroauer@gmail.com">
-                <i class="email pi pi-envelope" style="font-size: 1.6rem;"></i>
-              </a>
+          <div>
+          </div>
+          <div class="w-[40%] justify-center flex flex-col gap-3">
+            <div id="text-footer" class="ml-auto flex items-start">
+              <p class="ml-2 text-xl font-bold"> Social</p>
+            </div>
+            <div id="icons-footer" class="flex flex-row ml-auto">
+              <div class="icons-footer">
+                <a href="https://www.linkedin.com/in/aleschopf/" target="_blank" rel="noopener noreferrer">
+                  <i class="linkedin pi pi-linkedin" style="font-size: 1.6rem;"></i>
+                </a>
+                <a href="https://github.com/aleschopf" target="_blank" rel="noopener noreferrer">
+                  <i class="github pi pi-github" style="font-size: 1.6rem;"></i>
+                </a>
+                <a href="https://www.instagram.com/aleschopf/" target="_blank" rel="noopener noreferrer">
+                  <i class="instagram pi pi-instagram" style="font-size: 1.6rem;"></i>
+                </a>
+                <a href="mailto:alecsandroauer@gmail.com">
+                  <i class="email pi pi-envelope" style="font-size: 1.6rem;"></i>
+                </a>
+                <a href="sla">
+                  <i class="email pi pi-share-alt" style="font-size: 1.6rem;"></i>
+                </a>
+              </div>
             </div>
           </div>
-
         </div>
       </div>
+      <Divider />
+      <p class="m-0 text-center text-xs">&copy; 2024 Aleschopf. Todos os direitos reservados.</p>
     </template>
   </Card>
 </template>
@@ -59,6 +69,7 @@ import { ref, onMounted, onUnmounted } from 'vue';
 import Card from 'primevue/card';
 import Navbar from './components/Navbar.vue';
 import ScrollTop from 'primevue/scrolltop';
+import Divider from 'primevue/divider';
 import Dock from 'primevue/dock';
 
 const darkMode = ref(document.documentElement.classList.contains('dark'));

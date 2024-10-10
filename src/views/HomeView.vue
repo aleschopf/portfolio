@@ -128,6 +128,8 @@ const items = ref([
 
 .card-background-dark {
     background-image: url('home/dark.jpeg');
+    background-size: cover;
+    background-position: center;
 }
 
 .speeddialbtn-dark {
