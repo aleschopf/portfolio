@@ -1,6 +1,6 @@
 <template>
-    <div class="h-full w-[98%] m-auto flex items-center justify-center pb-4">
-        <Card class="w-full h-full">
+    <div class="h-full w-[98%] m-auto flex items-center justify-center">
+        <Card class="w-full h-max py-[3%]">
             <template #content>
                 <div class="pb-[3%]">
                     <p class="about-title">ABOUT ME</p>

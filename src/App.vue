@@ -24,15 +24,14 @@
         <div class="flex flex-row items-center justify-evenly space-x-4 select-none">
           <div class="w-[60%]">
             <p class="mb-3 text-3xl font-bold">Alecsandro Schopf Auer Junior</p>
-            <p class="text-sm mb-1">I’m Fullstack Developer and DevOps enthusiast with a focus on building scalable
-              systems and ensuring
-              robust security.</p>
-            <p class="text-sm">I'm passionate about leveraging technology to create solutions that make a difference.
+            <p class="text-sm mb-1">I'm a Fullstack Developer and DevOps enthusiast, focused on building scalable and
+              secure systems.</p>
+            <p class="text-sm">I love using technology to create impactful solutions.
             </p>
           </div>
           <div>
           </div>
-          <div class="w-[40%] justify-center flex flex-col gap-3">
+          <div class="w-[45%] justify-center flex flex-col gap-3">
             <div id="text-footer" class="ml-auto flex items-start">
               <p class="ml-2 text-2xl font-bold select-none">Social</p>
             </div>
@@ -202,7 +201,6 @@ i:hover {
 
 .p-dock {
   height: min-content !important;
-  position: fixed;
   bottom: 0;
   margin: auto 0;
 }
