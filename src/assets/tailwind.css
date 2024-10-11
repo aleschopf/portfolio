@@ -51,7 +51,7 @@
 .project-detail {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  @apply text-[10px] sm:text-[14px] md:text-sm lg:text-base xl:text-lg leading-tight tracking-tight;
+  @apply text-[12px] sm:text-[14px] md:text-sm lg:text-base xl:text-lg leading-tight tracking-tight;
 }
 
 .about-title {
@@ -73,6 +73,12 @@
   @apply text-lg sm:text-lg md:text-xl lg:text-2xl xl:text-3xl leading-tight tracking-tight;
 }
 
+.footer-title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  @apply text-lg sm:text-lg md:text-xl lg:text-2xl xl:text-3xl leading-tight tracking-tight;
+}
+
 .tag {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
@@ -81,6 +87,12 @@
 }
 
 .know-content {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  @apply text-[10px] sm:text-[14px] md:text-sm lg:text-base xl:text-lg leading-tight tracking-tight;
+}
+
+.footer-text {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   @apply text-[10px] sm:text-[14px] md:text-sm lg:text-base xl:text-lg leading-tight tracking-tight;

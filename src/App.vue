@@ -7,6 +7,51 @@
       <div class="h-full">
         <router-view />
       </div>
+      <Card>
+        <template #content>
+          <div class="flex flex-row gap-4 items-center justify-center py-4">
+            <div class="flex flex-row items-center justify-evenly space-x-4 select-none">
+              <div class="w-[60%]">
+                <p class="mb-3 footer-title">Alecsandro Schopf Auer Junior</p>
+                <p class="footer-text mb-1">I'm a Fullstack Developer and DevOps enthusiast, focused on building
+                  scalable
+                  and
+                  secure systems.</p>
+                <p class="footer-text">I love using technology to create impactful solutions.
+                </p>
+              </div>
+              <div>
+              </div>
+              <div class="w-[45%] justify-center flex flex-col gap-3">
+                <div id="text-footer" class="ml-auto flex items-start">
+                  <p class="ml-2 text-2xl font-bold select-none">Social</p>
+                </div>
+                <div id="icons-footer" class="flex flex-row ml-auto">
+                  <div class="icons-footer">
+                    <a href="https://www.linkedin.com/in/aleschopf/" target="_blank" rel="noopener noreferrer">
+                      <i class="linkedin pi pi-linkedin" style="font-size: 1.6rem;"></i>
+                    </a>
+                    <a href="https://github.com/aleschopf" target="_blank" rel="noopener noreferrer">
+                      <i class="github pi pi-github" style="font-size: 1.6rem;"></i>
+                    </a>
+                    <a href="https://www.instagram.com/aleschopf/" target="_blank" rel="noopener noreferrer">
+                      <i class="instagram pi pi-instagram" style="font-size: 1.6rem;"></i>
+                    </a>
+                    <a href="mailto:alecsandroauer@gmail.com">
+                      <i class="email pi pi-envelope" style="font-size: 1.6rem;"></i>
+                    </a>
+                    <a href="https://linktr.ee/aleschopf">
+                      <i class="linktree pi pi-share-alt" style="font-size: 1.6rem;"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <Divider />
+          <p class="m-0 text-center text-xs select-none">&copy; 2024 Aleschopf. Todos os direitos reservados.</p>
+        </template>
+      </Card>
     </main>
   </div>
 
@@ -18,49 +63,6 @@
     </Dock>
   </div>
   <ScrollTop />
-  <Card>
-    <template #content>
-      <div class="flex flex-row gap-4 items-center justify-center py-4">
-        <div class="flex flex-row items-center justify-evenly space-x-4 select-none">
-          <div class="w-[60%]">
-            <p class="mb-3 text-3xl font-bold">Alecsandro Schopf Auer Junior</p>
-            <p class="text-sm mb-1">I'm a Fullstack Developer and DevOps enthusiast, focused on building scalable and
-              secure systems.</p>
-            <p class="text-sm">I love using technology to create impactful solutions.
-            </p>
-          </div>
-          <div>
-          </div>
-          <div class="w-[45%] justify-center flex flex-col gap-3">
-            <div id="text-footer" class="ml-auto flex items-start">
-              <p class="ml-2 text-2xl font-bold select-none">Social</p>
-            </div>
-            <div id="icons-footer" class="flex flex-row ml-auto">
-              <div class="icons-footer">
-                <a href="https://www.linkedin.com/in/aleschopf/" target="_blank" rel="noopener noreferrer">
-                  <i class="linkedin pi pi-linkedin" style="font-size: 1.6rem;"></i>
-                </a>
-                <a href="https://github.com/aleschopf" target="_blank" rel="noopener noreferrer">
-                  <i class="github pi pi-github" style="font-size: 1.6rem;"></i>
-                </a>
-                <a href="https://www.instagram.com/aleschopf/" target="_blank" rel="noopener noreferrer">
-                  <i class="instagram pi pi-instagram" style="font-size: 1.6rem;"></i>
-                </a>
-                <a href="mailto:alecsandroauer@gmail.com">
-                  <i class="email pi pi-envelope" style="font-size: 1.6rem;"></i>
-                </a>
-                <a href="https://linktr.ee/aleschopf">
-                  <i class="linktree pi pi-share-alt" style="font-size: 1.6rem;"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <Divider />
-      <p class="m-0 text-center text-xs select-none">&copy; 2024 Aleschopf. Todos os direitos reservados.</p>
-    </template>
-  </Card>
 </template>
 
 <script setup lang="ts">
@@ -83,7 +85,7 @@ onMounted(() => {
   setTimeout(() => {
     ajustarLargura();
     window.addEventListener('resize', ajustarLargura);
-  }, 100);
+  }, 150);
 
   updateDarkMode();
   updateDockPosition();
