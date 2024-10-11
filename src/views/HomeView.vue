@@ -3,15 +3,15 @@
         <Card class="w-full h-full flex items-center justify-center text-center"
             :class="['card', darkMode ? 'card-background-dark' : 'card-background-light']">
             <template #title>
-                <span class="card-title m-0">HEY, I'M ALECSANDRO SCHOPF</span>
+                <span class="card-title m-0 select-none">HEY, I'M ALECSANDRO SCHOPF</span>
             </template>
             <template #content>
-                <p class="card-text m-0">
+                <p class="card-text m-0 select-none">
                     A Fullstack Developer and DevOps enthusiast with a focus on building scalable systems and ensuring
                     robust security.
                 </p>
-                <p class="card-text m-0">
-                    I'm passionate about leveraging technology to create solutions that make a difference. Explore my
+                <p class="card-text m-0 select-none">
+                    I’m passionate about leveraging technology to create solutions that make a difference. Explore my
                     work and let's connect!
                 </p>
                 <div class="relative flex items-end justify-center" style="height: 200px; margin-top: 16px;">
@@ -120,16 +120,17 @@ const items = ref([
     font-size: 1.25rem;
 }
 
-.card-background-light {
-    background-image: url('/home/light.jpeg');
+.card {
     background-size: cover;
     background-position: center;
 }
 
+.card-background-light {
+    background-image: url('/home/light.jpeg');
+}
+
 .card-background-dark {
     background-image: url('/home/dark.jpeg');
-    background-size: cover;
-    background-position: center;
 }
 
 .speeddialbtn-dark {

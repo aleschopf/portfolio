@@ -13,7 +13,7 @@
   <div class="dock-wrapper w-min">
     <Dock :class="['dock', darkMode ? 'dock-dark-mode' : 'dock-light-mode']" :model="items" :position="dockPosition">
       <template #itemicon="{ item }">
-        <a :href="item.link"><i :class="item.icon" :style="{ fontSize: iconSize }"></i></a>
+        <a :href="item.link" target="_blank"><i :class="item.icon" :style="{ fontSize: iconSize }"></i></a>
       </template>
     </Dock>
   </div>
@@ -21,10 +21,10 @@
   <Card>
     <template #content>
       <div class="flex flex-row gap-4 items-center justify-center py-4">
-        <div class="flex flex-row items-center justify-evenly space-x-4">
+        <div class="flex flex-row items-center justify-evenly space-x-4 select-none">
           <div class="w-[60%]">
-            <p class="mb-3 text-2xl font-bold">Alecsandro Schopf Auer Junior</p>
-            <p class="text-sm mb-1">I'm Fullstack Developer and DevOps enthusiast with a focus on building scalable
+            <p class="mb-3 text-3xl font-bold">Alecsandro Schopf Auer Junior</p>
+            <p class="text-sm mb-1">I’m Fullstack Developer and DevOps enthusiast with a focus on building scalable
               systems and ensuring
               robust security.</p>
             <p class="text-sm">I'm passionate about leveraging technology to create solutions that make a difference.
@@ -34,7 +34,7 @@
           </div>
           <div class="w-[40%] justify-center flex flex-col gap-3">
             <div id="text-footer" class="ml-auto flex items-start">
-              <p class="ml-2 text-xl font-bold"> Social</p>
+              <p class="ml-2 text-2xl font-bold select-none">Social</p>
             </div>
             <div id="icons-footer" class="flex flex-row ml-auto">
               <div class="icons-footer">
@@ -50,8 +50,8 @@
                 <a href="mailto:alecsandroauer@gmail.com">
                   <i class="email pi pi-envelope" style="font-size: 1.6rem;"></i>
                 </a>
-                <a href="sla">
-                  <i class="email pi pi-share-alt" style="font-size: 1.6rem;"></i>
+                <a href="https://linktr.ee/aleschopf">
+                  <i class="linktree pi pi-share-alt" style="font-size: 1.6rem;"></i>
                 </a>
               </div>
             </div>
@@ -59,7 +59,7 @@
         </div>
       </div>
       <Divider />
-      <p class="m-0 text-center text-xs">&copy; 2024 Aleschopf. Todos os direitos reservados.</p>
+      <p class="m-0 text-center text-xs select-none">&copy; 2024 Aleschopf. Todos os direitos reservados.</p>
     </template>
   </Card>
 </template>
@@ -83,6 +83,11 @@ let observer: MutationObserver;
 onMounted(() => {
   updateDarkMode()
 
+  ajustarLargura();
+  window.addEventListener('resize', ajustarLargura);
+  updateDockPosition();
+  window.addEventListener("resize", updateDockPosition);
+
   observer = new MutationObserver(() => {
     updateDarkMode();
   });
@@ -94,10 +99,20 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
+  window.removeEventListener('resize', ajustarLargura);
   if (observer) {
     observer.disconnect();
   }
 });
+
+const ajustarLargura = () => {
+  const textFooter = document.getElementById('text-footer');
+  const iconsFooter = document.getElementById('icons-footer');
+
+  if (textFooter && iconsFooter) {
+    textFooter.style.width = `${iconsFooter.offsetWidth}px`;
+  }
+};
 
 const items = ref([
   {
@@ -139,19 +154,19 @@ const updateDockPosition = () => {
     iconSize.value = "2rem";
   }
 };
-
-onMounted(() => {
-  updateDockPosition();
-  window.addEventListener("resize", updateDockPosition);
-});
 </script>
 
 <style>
 .icons-footer a {
   padding-left: 8px;
 }
+
+i {
+user-select: none;
+}
+
 i:hover {
-  transition: color 0.3s ease;
+  transition: color 0.25s ease;
 }
 
 .linkedin:hover {
