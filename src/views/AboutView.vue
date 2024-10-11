@@ -1,5 +1,5 @@
 <template>
-    <div class="h-full w-[98%] m-auto flex items-center justify-center">
+    <div class="h-[80%] w-[98%] m-auto flex items-center justify-center">
         <Card class="w-full h-max py-[3%]">
             <template #content>
                 <div class="pb-[3%]">

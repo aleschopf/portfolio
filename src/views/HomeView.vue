@@ -88,7 +88,7 @@ const items = ref([
         label: 'About me',
         icon: 'pi pi-envelope',
         command: () => {
-            window.location.href = "/about";
+            router.push('/about');
         }
     }
 ]);
