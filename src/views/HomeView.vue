@@ -1,39 +1,44 @@
 <template>
-    <div class="h-full w-[98%] m-auto flex items-center justify-center pb-4">
+    <div class="w-[98%] h-[90vh] mx-auto my-4">
         <Card class="w-full h-full flex items-center justify-center text-center"
             :class="['card', darkMode ? 'card-background-dark' : 'card-background-light']">
             <template #title>
-                <span class="card-title m-0 select-none">HEY, I'M ALECSANDRO SCHOPF</span>
+                <span class="card-title text-3xl md:text-4xl lg:text-5xl font-bold m-0 select-none">HEY, I'M ALECSANDRO
+                    SCHOPF</span>
             </template>
             <template #content>
-                <p class="card-text m-0 select-none">
-                    A Fullstack Developer and DevOps enthusiast with a focus on building scalable systems and ensuring
-                    robust security.
-                </p>
-                <p class="card-text m-0 select-none">
-                    I’m passionate about leveraging technology to create solutions that make a difference. Explore my
-                    work and let's connect!
-                </p>
-                <div class="relative flex items-end justify-center" style="height: 200px; margin-top: 16px;">
-                    <SpeedDial :model="items" direction="down" :transitionDelay="80" :style="{ position: 'absolute' }"
-                        pt:menuitem="m-2">
-                        <template #button="{ toggleCallback }">
-                            <Button class="text-w w-40 h-12 text-lg font-bold" @click="toggleCallback">
-                                More details
-                            </Button>
-                        </template>
-                        <template #item="{ item, toggleCallback }">
-                            <Button
-                                class="flex items-center p-2 justify-center border rounded border-surface-200 dark:border-surface-700 w-40 cursor-pointer"
-                                :class="['speeddialbtn', darkMode ? 'speeddialbtn-dark' : 'speeddialbtn-light']"
-                                @click="toggleCallback">
-                                <span :class="item.icon + ' text-2xl mr-2'" />
-                                <span class="text-lg">
-                                    {{ item.label }}
-                                </span>
-                            </Button>
-                        </template>
-                    </SpeedDial>
+                <div class="flex flex-col items-center justify-center h-full">
+                    <p class="card-text text-lg md:text-xl lg:text-2xl mb-4 max-w-3xl mx-auto select-none">
+                        A Fullstack Developer and DevOps enthusiast with a focus on building scalable systems and
+                        ensuring
+                        robust security.
+                    </p>
+                    <p class="card-text text-lg md:text-xl lg:text-2xl mb-8 max-w-3xl mx-auto select-none">
+                        I'm passionate about leveraging technology to create solutions that make a difference. Explore
+                        my
+                        work and let's connect!
+                    </p>
+                    <div class="relative flex items-end justify-center mt-8">
+                        <SpeedDial :model="items" direction="down" :transitionDelay="80"
+                            :style="{ position: 'relative' }" pt:menuitem="m-2">
+                            <template #button="{ toggleCallback }">
+                                <Button class="text-w w-48 h-14 text-xl font-bold" @click="toggleCallback">
+                                    More details
+                                </Button>
+                            </template>
+                            <template #item="{ item, toggleCallback }">
+                                <Button
+                                    class="flex items-center p-2 justify-center border rounded border-surface-200 dark:border-surface-700 w-48 cursor-pointer"
+                                    :class="['speeddialbtn', darkMode ? 'speeddialbtn-dark' : 'speeddialbtn-light']"
+                                    @click="toggleCallback">
+                                    <span :class="item.icon + ' text-2xl mr-2'" />
+                                    <span class="text-lg">
+                                        {{ item.label }}
+                                    </span>
+                                </Button>
+                            </template>
+                        </SpeedDial>
+                    </div>
                 </div>
             </template>
         </Card>

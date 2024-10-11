@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full flex items-center justify-center mb-2">
+    <div class="w-full flex items-center justify-center">
         <Menubar :model="items" class="w-[98%] rounded-lg shadow-md overflow-hidden">
             <template #start>
                 <div class="h-full">

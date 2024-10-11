@@ -1,12 +1,14 @@
 <template>
-  <div class="flex flex-col h-screen">
+  <div class="flex flex-col min-h-screen">
     <header>
       <Navbar />
     </header>
     <main class="flex-grow">
-      <div class="h-full">
+      <div class="flex-grow flex items-center justify-center py-6">
         <router-view />
       </div>
+    </main>
+    <footer class="mt-auto">
       <Card>
         <template #content>
           <div class="flex flex-row gap-4 items-center justify-center py-4">
@@ -22,27 +24,29 @@
               </div>
               <div>
               </div>
-              <div class="w-[45%] justify-center flex flex-col gap-3">
-                <div id="text-footer" class="ml-auto flex items-start">
-                  <p class="ml-2 text-2xl font-bold select-none">Social</p>
-                </div>
-                <div id="icons-footer" class="flex flex-row ml-auto">
-                  <div class="icons-footer">
-                    <a href="https://www.linkedin.com/in/aleschopf/" target="_blank" rel="noopener noreferrer">
-                      <i class="linkedin pi pi-linkedin" style="font-size: 1.6rem;"></i>
-                    </a>
-                    <a href="https://github.com/aleschopf" target="_blank" rel="noopener noreferrer">
-                      <i class="github pi pi-github" style="font-size: 1.6rem;"></i>
-                    </a>
-                    <a href="https://www.instagram.com/aleschopf/" target="_blank" rel="noopener noreferrer">
-                      <i class="instagram pi pi-instagram" style="font-size: 1.6rem;"></i>
-                    </a>
-                    <a href="mailto:alecsandroauer@gmail.com">
-                      <i class="email pi pi-envelope" style="font-size: 1.6rem;"></i>
-                    </a>
-                    <a href="https://linktr.ee/aleschopf">
-                      <i class="linktree pi pi-share-alt" style="font-size: 1.6rem;"></i>
-                    </a>
+              <div class="w-[45%] justify-center flex flex-col">
+                <div class="ml-auto gap-3">
+                  <div id="text-footer" class="flex w-full items-start mb-2.5">
+                    <p class="ml-2 text-2xl font-bold select-none">Social</p>
+                  </div>
+                  <div id="icons-footer" class="flex flex-row w-full">
+                    <div class="icons-footer">
+                      <a href="https://www.linkedin.com/in/aleschopf/" target="_blank" rel="noopener noreferrer">
+                        <i class="linkedin pi pi-linkedin" style="font-size: 1.6rem;"></i>
+                      </a>
+                      <a href="https://github.com/aleschopf" target="_blank" rel="noopener noreferrer">
+                        <i class="github pi pi-github" style="font-size: 1.6rem;"></i>
+                      </a>
+                      <a href="https://www.instagram.com/aleschopf/" target="_blank" rel="noopener noreferrer">
+                        <i class="instagram pi pi-instagram" style="font-size: 1.6rem;"></i>
+                      </a>
+                      <a href="mailto:alecsandroauer@gmail.com">
+                        <i class="email pi pi-envelope" style="font-size: 1.6rem;"></i>
+                      </a>
+                      <a href="https://linktr.ee/aleschopf">
+                        <i class="linktree pi pi-share-alt" style="font-size: 1.6rem;"></i>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -52,7 +56,7 @@
           <p class="m-0 text-center text-xs select-none">&copy; 2024 Aleschopf. Todos os direitos reservados.</p>
         </template>
       </Card>
-    </main>
+    </footer>
   </div>
 
   <div class="dock-wrapper w-min">
@@ -82,11 +86,6 @@ const updateDarkMode = () => {
 let observer: MutationObserver;
 
 onMounted(() => {
-  setTimeout(() => {
-    ajustarLargura();
-    window.addEventListener('resize', ajustarLargura);
-  }, 150);
-
   updateDarkMode();
   updateDockPosition();
   window.addEventListener("resize", updateDockPosition);
@@ -102,20 +101,10 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
-  window.removeEventListener('resize', ajustarLargura);
   if (observer) {
     observer.disconnect();
   }
 });
-
-const ajustarLargura = () => {
-  const textFooter = document.getElementById('text-footer');
-  const iconsFooter = document.getElementById('icons-footer');
-
-  if (textFooter && iconsFooter) {
-    textFooter.style.width = `${iconsFooter.offsetWidth}px`;
-  }
-};
 
 const items = ref([
   {
