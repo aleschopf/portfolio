@@ -22,7 +22,7 @@
                             cloud technologies
                             (AWS), I thrive on solving complex challenges and optimizing processes for high-performance
                             systems.</p>
-                        <p class="know-content">Check out my <a href="/portfolio/projects" target="_blank">Projects</a>
+                        <p class="know-content">Check out my <a href="/portfolio/#/projects" target="_blank">Projects</a>
                             section to see
                             some of my work!</p>
                         <p class="know-content">I also enjoy sharing my knowledge about Web Development, Cloud, and
