@@ -64,7 +64,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted} from 'vue';
 import Card from 'primevue/card';
 import Navbar from './components/Navbar.vue';
 import ScrollTop from 'primevue/scrolltop';
@@ -80,10 +80,12 @@ const updateDarkMode = () => {
 let observer: MutationObserver;
 
 onMounted(() => {
-  updateDarkMode()
+  setTimeout(() => {
+    ajustarLargura();
+    window.addEventListener('resize', ajustarLargura);
+  }, 100);
 
-  ajustarLargura();
-  window.addEventListener('resize', ajustarLargura);
+  updateDarkMode();
   updateDockPosition();
   window.addEventListener("resize", updateDockPosition);
 
@@ -205,6 +207,13 @@ i:hover {
   margin: auto 0;
 }
 
+.dock-wrapper {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+}
+
 @media (max-width: 768px) {
   .p-dock {
       width: min-content !important;
@@ -228,6 +237,8 @@ i:hover {
     bottom: 0;
     width: 100%;
     height: min-content !important;
+    top: 100%;
+    transform: none;
   }
 }
 
