@@ -3,7 +3,7 @@
         <Card class="w-full h-full flex items-center justify-center text-center"
             :class="['card', darkMode ? 'card-background-dark' : 'card-background-light']">
             <template #title>
-                <span class="card-title text-3xl md:text-4xl lg:text-5xl font-bold m-0 select-none">HEY, I'M ALECSANDRO
+                <span class="card-title font-bold m-0 select-none">HEY, I'M ALECSANDRO
                     SCHOPF</span>
             </template>
             <template #content>
